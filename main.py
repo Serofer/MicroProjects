@@ -27,7 +27,7 @@ WINNING_COMBINATIONS = [
   [2, 4, 6]
 ]
 for j in range(9):
-    index++
+    index = index + 1
     if j != 0:
         print("Enter two numbers between 1 and 3 to choose first the row, then the column in the format [ROW/COLUMN]")
         coords = input()
@@ -54,7 +54,6 @@ for j in range(9):
             print(x)
     def check_win():
         for combination in WINNING_COMBINATIONS:
-            print(combination)
             if possibleLocations[combination[0]] == "X" and possibleLocations[combination[1]] == "X" and possibleLocations[combination[2]] == "X":
                 print("X has won !")
             if possibleLocations[combination[0]] == "O" and possibleLocations[combination[1]] == "O" and possibleLocations[combination[2]] == "O":
