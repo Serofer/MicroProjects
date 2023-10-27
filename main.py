@@ -2,6 +2,7 @@ rows = ["#        |     |   ","#        |     |   ", "#   _____|_____|_____", "#
 circle = True
 PlaceIndex = 0
 coords=""
+index=0
 thisdict = {
     "1/1": [1, 6],
     "1/2": [1, 12],
@@ -26,6 +27,7 @@ WINNING_COMBINATIONS = [
   [2, 4, 6]
 ]
 for j in range(9):
+    index++
     if j != 0:
         print("Enter two numbers between 1 and 3 to choose first the row, then the column in the format [ROW/COLUMN]")
         coords = input()
@@ -55,6 +57,10 @@ for j in range(9):
             print(combination)
             if possibleLocations[combination[0]] == "X" and possibleLocations[combination[1]] == "X" and possibleLocations[combination[2]] == "X":
                 print("X has won !")
+            if possibleLocations[combination[0]] == "O" and possibleLocations[combination[1]] == "O" and possibleLocations[combination[2]] == "O":
+                print("O has won !")
+            elif index == 9:
+                print("It's a draw")
     create_grid()
     check_win()
         #check for draw
